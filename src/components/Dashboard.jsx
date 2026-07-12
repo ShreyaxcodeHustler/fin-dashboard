@@ -12,6 +12,8 @@ function Dashboard() {
           const wiggle = (Math.random() - 0.5) * 2 // random number between -1 and 1
           const newPrice = Math.max(0, s.price + wiggle)
           const newChange = s.change + (Math.random() - 0.5) * 0.3
+          const newHistory = [...s.history, newPrice].slice(-30) // keep last 30 points
+
           return { ...s, price: newPrice, change: newChange }
         })
       )
